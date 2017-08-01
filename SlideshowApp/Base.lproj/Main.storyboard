@@ -47,8 +47,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7P-AE-EM9">
-                                <rect key="frame" x="253" y="340" width="67" height="30"/>
-                                <state key="normal" title="再生/停止"/>
+                                <rect key="frame" x="253" y="340" width="31" height="30"/>
+                                <state key="normal" title="再生"/>
                                 <connections>
                                     <action selector="playImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wFk-wH-f64"/>
                                 </connections>
@@ -68,6 +68,9 @@
                     </view>
                     <connections>
                         <outlet property="imageView" destination="9MK-Oc-FdG" id="Wew-rH-WN3"/>
+                        <outlet property="nextLabel" destination="lTm-I2-qaS" id="EnU-Ds-XDu"/>
+                        <outlet property="playLabel" destination="I7P-AE-EM9" id="kAy-br-ngB"/>
+                        <outlet property="prevLabel" destination="F12-39-JYs" id="kWP-hh-YLa"/>
                         <segue destination="kHx-bX-HHQ" kind="show" identifier="result" id="s7Y-ZI-htS"/>
                     </connections>
                 </viewController>
@@ -96,10 +99,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="639"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72P-qF-EMR">
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72P-qF-EMR">
                                 <rect key="frame" x="304" y="44" width="63" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.96394909890000002" green="0.95634571889999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="Prx-IR-God"/>
+                                </constraints>
                                 <state key="normal" title="戻る">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -109,6 +114,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="72P-qF-EMR" secondAttribute="trailing" constant="8" id="4VT-WL-P8d"/>
+                            <constraint firstItem="72P-qF-EMR" firstAttribute="top" secondItem="6Yn-D5-fYv" secondAttribute="bottom" constant="24" id="G4k-RG-yE7"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bigImage" destination="98a-1d-886" id="Vb0-tU-ojU"/>

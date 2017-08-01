@@ -25,7 +25,7 @@ class ResultViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        img0 = UIImage(named:"00_big")!
+        img0 = UIImage(named:"00_kurapika")!
         img1 = UIImage(named:"01_mizai")!
         img2 = UIImage(named:"02_kanzai")!
         

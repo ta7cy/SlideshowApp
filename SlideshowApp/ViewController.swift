@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var playLabel: UIButton!
+    @IBOutlet weak var nextLabel: UIButton!
+    @IBOutlet weak var prevLabel: UIButton!
 
     var img0 = UIImage()
     var img1 = UIImage()
@@ -39,17 +42,14 @@ class ViewController: UIViewController {
     
     @IBAction func nextImage(_ sender: Any) {
         
-        if timer == nil{
-            img_num += 1
-            changeImage(num: img_num)
-        }
+        img_num += 1
+        changeImage(num: img_num)
     }
 
     @IBAction func prevImage(_ sender: Any) {
-        if timer == nil{
-            img_num -= 1
-            changeImage(num: img_num)
-        }
+
+        img_num -= 1
+        changeImage(num: img_num)
     }
     
     
@@ -58,11 +58,20 @@ class ViewController: UIViewController {
         if timer == nil {
             // play
             timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+            
+            playLabel.setTitle("停止", for: UIControlState.normal)
+            nextLabel.isEnabled = false
+            prevLabel.isEnabled = false
+            
         }
         else{
             // stop
             timer.invalidate()
             timer = nil
+            
+            playLabel.setTitle("再生", for: UIControlState.normal)
+            nextLabel.isEnabled = true
+            prevLabel.isEnabled = true
         
         }
         
